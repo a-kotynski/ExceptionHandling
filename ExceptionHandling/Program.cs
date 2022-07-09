@@ -10,14 +10,27 @@ namespace ExceptionHandling
     {
         static void Main(string[] args)
         {
-            int a, b, c;
-            Console.WriteLine("Enter a value of a: ");
-            a = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter a value of b: ");
-            b = int.Parse(Console.ReadLine());
+            try
+            { // put a piece of code that causes an error in the try block
+                int a, b, c;
+                Console.WriteLine("Enter a value of a: ");
+                a = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter a value of b: ");
+                b = int.Parse(Console.ReadLine());
 
-            c = a / b;
-            Console.WriteLine("Division of a by b is: " + c);
+                c = a / b;
+                Console.WriteLine("Division of a by b is: " + c);
+            }
+            catch (Exception)
+            {
+
+                Console.WriteLine("Error Occured");
+            }
+            finally
+            { // finally executes code regardless if there was an exception or not
+                Console.WriteLine("Program Executed");
+            }
+            
         }
     }
 }
